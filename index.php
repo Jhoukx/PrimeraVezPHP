@@ -307,13 +307,111 @@
      */
     
     $nombre = "Miguel";
-     $fn = function () use($nombre):string{
+    $fn = function () use($nombre):string{
         return "Dato pasado por 'use' :".$nombre;
-     };
-     echo $fn() . "<br/>";
+    };
+    echo $fn() . "<br/>";
+
+        /**
+     * *Funcion que no retorna un valor 
+     */
+    function funcionVoid($numero1,$numero2){
+        echo "Funcion sin retornar ";
+        echo $numero1 + $numero2;
+    } 
+    funcionVoid(5,5);
 
     /**
-     * !Buscar para consumir apis
-     * file_get_contents()
-     */ 
+     * todo json_encode y json_decode
+     */
+    
+    /**
+     * * json_encode
+     *  Sirve para convertir una estructura de datos a una cadena JSON
+     */
+    echo "<h1>Json encode y decode</h1>";
+    echo "<h3>json_encode </h3>";
+    echo "Antes del json_encode:" . "<br/>";
+    echo "<br/>";
+    $jsonEncode = [
+        [
+            "nombre"=> "Iphone",
+            "precio"=> 500,
+            "inStock"=>true
+        ],
+        [
+            "nombre"=> "Android",
+            "precio"=> 300,
+            "inStock"=>false
+        ]
+        ];
+    print_r($jsonEncode);
+    echo "Después del json_encode:" . "<br/>";
+    echo "<br/>";
+    $jsonDecode =json_encode($jsonEncode);
+    print_r(json_encode($jsonEncode));
+    /**
+     * * json_decode
+     *  Sirve para convertir una cadena JSON a una structura de datos de PHP
+     */
+    echo "<h3>json_decode </h3>";
+    echo "Antes del json_decode" . "<br/>";
+    print_r($jsonDecode);
+    echo "<br/>". "<br/>";
+    echo "Después del json_decode:" . "<br/>";
+    echo "<br/>";
+    print_r(json_decode($jsonDecode));
+    /**
+     * todo POO
+     */
+    echo "<h1>POO</h1>";
+    echo "<h3>Caracteristicas:</h3>";
+    echo "<ul>";
+    echo "<li><b>Clases:</b> Es una plantilla o definicion que describe las caracteristicas o comportamientos de los objetos.</li>";
+    echo "<li><b>Objeto:</b> Es una instancia de una clase, representa una entidad especifica del mismo con propiedades y comportamientos.</li>";
+    echo "<li><b>Atributos:</b> Son caracteristicas o propiedades de un objeto.</li>";
+    echo "<li><b>Métodos:</b> Son acciones o comportamientos que puede realizar una clase.</li>";
+    echo "</ul>";
+    echo "<h3>Modificadores de acceso:</h3>";
+    echo "<ul>";
+    echo "<li><b>Public:</b> Son accesibles desde cualquier lugar, ya sea desde dentro de la clase,desde las clases heredadas o desde fuera de la clase.</li>";
+    echo "<li><b>Private:</b> Solo son accesibles desde dentro de la misma clase en que se definen. </li>";
+    echo "<li><b>Protected:</b> Son accesibles desde dentro de la misma clase y desde las clases heredadas, pero NO PUEDEN SER HEREDADAS DESDE FUERA DE LAS CLASE.</li>";
+    echo "</ul>";
+    echo "<h3>Métodos estáticos:</h3>";
+    echo "Son aquellos atributos o métodos que pertenecen a la clase en sí y no a una instancia de la misma. Pueden ser llamados sin crear una instancia de la misma. ";
+    echo "<h3>Clases abstractas:</h3>";
+    echo "es una clase que no se puede instanciar directamente, sino que sirve como una plantilla o base para otras clases";
+    echo "<h3>Interfaces:</h3>";
+    echo "una interfaz es una estructura que define un conjunto de métodos que una clase debe implementar";
+    echo "<h3>Autoload:</h3>";
+    echo "es una técnica que permite cargar automáticamente las
+    clases cuando son necesarias, sin tener que incluir manualmente los archivos de clase en cada punto
+    del código";
+    echo "<h3>Namespace:</h3>";
+    echo "la palabra clave use se utiliza en la definición de espacios de nombres (namespace) para
+    importar clases, funciones y constantes desde otros espacios de nombres";
+    echo "<h3>Composer:</h3>";
+    echo "<ul>";
+    echo "<li>Composer es un administrador de dependencias para PHP que permite instalar librerías de terceros
+    para facilitar el desarrollo con php. Componser es el equivalente a npm para node JS.</li>";
+    echo "<li>Es importante usar el comando 'composer update' para actualizar la config en formato JSON de composer cada vez que hagamos un cambio.</li>";
+    echo "<li> Para configurar el autoload luego de inicilizar el composer hay que agregar el autoload como se muestra acontinuacion:
+
+            'autoload': {
+                'psr-4':{
+                    '(namespace)'(doble '\'):[
+                        (Ruta de carpetas)
+                    ]
+                }
+            }
+    </li>";
+    echo "</ul>";
+    echo "<h1>PHP avanzado</h1>";
+    
+    
+
+
+
+
 ?>
